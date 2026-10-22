@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+
+  test:
+    name: test (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, ubuntu-24.04-arm]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@stable
+      - run: uname -r
+      - name: Parser, rules and live mappings (named-region check required here)
+        run: MAPS_GUARD_REQUIRE_ANON_NAME=1 cargo test -- --nocapture
+      - name: Scan this runner's own processes (informational)
+        run: |
+          cargo build -q --release
+          for p in /proc/[0-9]*; do ./target/release/maps-guard --pid "${p#/proc/}" 2>/dev/null; done | sort | uniq -c | sort -rn | head -20 || true
+
+  msrv:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: dtolnay/rust-toolchain@1.75
+      - run: cargo build --lib --bins
