@@ -17,3 +17,7 @@ name = "maps-guard"
 path = "src/main.rs"
 
 [dependencies]
+
+[dev-dependencies]
+libc = "0.2"
+proptest = "1"

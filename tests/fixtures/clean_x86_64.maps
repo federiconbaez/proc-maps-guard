@@ -1,0 +1,19 @@
+5649a9d24000-5649a9d26000 r--p 00000000 fe:10 9213                       /usr/bin/cat
+5649a9d26000-5649a9d2c000 r-xp 00002000 fe:10 9213                       /usr/bin/cat
+5649a9d2c000-5649a9d2f000 r--p 00008000 fe:10 9213                       /usr/bin/cat
+5649a9d2f000-5649a9d30000 r--p 0000a000 fe:10 9213                       /usr/bin/cat
+5649a9d30000-5649a9d31000 rw-p 0000b000 fe:10 9213                       /usr/bin/cat
+5649ab1e2000-5649ab203000 rw-p 00000000 00:00 0                          [heap]
+7f6ea5400000-7f6ea5428000 r--p 00000000 fe:10 4402                       /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6ea5428000-7f6ea55b0000 r-xp 00028000 fe:10 4402                       /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6ea55b0000-7f6ea55ff000 r--p 001b0000 fe:10 4402                       /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6ea55ff000-7f6ea5603000 r--p 001fe000 fe:10 4402                       /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6ea5603000-7f6ea5605000 rw-p 00202000 fe:10 4402                       /usr/lib/x86_64-linux-gnu/libc.so.6
+7f6ea5605000-7f6ea5612000 rw-p 00000000 00:00 0 
+7f6ea56c0000-7f6ea56c2000 rw-p 00000000 00:00 0                          [anon:glibc.malloc]
+7f6ea56eb000-7f6ea56ef000 r--p 00000000 00:00 0                          [vvar]
+7f6ea56ef000-7f6ea56f1000 r-xp 00000000 00:00 0                          [vdso]
+7f6ea56f1000-7f6ea56f2000 r--p 00000000 fe:10 4399                       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f6ea56f2000-7f6ea571a000 r-xp 00001000 fe:10 4399                       /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffc1b0e3000-7ffc1b104000 rw-p 00000000 00:00 0                          [stack]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]
