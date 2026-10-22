@@ -12,4 +12,8 @@ categories = ["os::linux-apis", "command-line-utilities"]
 [lib]
 name = "proc_maps_guard"
 
+[[bin]]
+name = "maps-guard"
+path = "src/main.rs"
+
 [dependencies]
