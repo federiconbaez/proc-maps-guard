@@ -1,0 +1,15 @@
+[package]
+name = "proc-maps-guard"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+license = "Apache-2.0"
+description = "Parses /proc/<pid>/maps and flags writable+executable, anonymous executable and deleted/memfd executable mappings"
+repository = "https://github.com/federiconbaez/proc-maps-guard"
+keywords = ["security", "procfs", "memory", "sandbox", "linux"]
+categories = ["os::linux-apis", "command-line-utilities"]
+
+[lib]
+name = "proc_maps_guard"
+
+[dependencies]
